@@ -2,3 +2,5 @@ Aggregation:
 
 1. db.products.aggregate([{$group:{"_id":"$category", "num_products":{"$sum":1}}}])
 2. quiz :$sum    ---   db.zips.aggregate([{"$group":{"_id":"$state", "population":{$sum:"$pop"}}}])
+3. quiz :$addToSet --- db.zips.aggregate([{"$group":{"_id":"$city", "postal_codes":{$addToSet:"$_id"}}}])
+4. max and min --- db.zips.aggregate([{"$group":{"_id":"$state", "pop":{$max:"$pop"}}}])
